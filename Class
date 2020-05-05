@@ -1,0 +1,46 @@
+import java.util.Random;
+/**
+ *
+ * @author canvi
+ */
+public class Magic8Ball {
+    
+    Random rand = new Random ();
+            int randInt = rand.nextInt(5-1)+1; //Random int that will be assigned to a response to a question based on the first word
+            
+    private String askQuestion;        // question that user should input in the Magic8BallGUI
+    
+    String questionField = askQuestion;
+ 
+    String [] whyAnswers = {"Because it is what it is","I'm not sure, ask again tomorrow","It is not a good fit","All is well","Karen, that's why"};
+    String [] whoAnswers = {"The last O.G.","The best of the best.","Sounds like a funny","who let the dog out","You need to look harder"};
+    String [] whatAswers = {"I have no idea","Ask your father"};
+    String [] whenAnswers = {"When the time is right","Tommorrow is another day","All in due time","Somday soon","It's too soon to tell"};
+    String [] howAnswers = {"It is not for me to tell","Because I said so","With a hop, skip and a jump","Slowly","As quick as you can"};
+    String [] whereAnswers = {"On the Moon","In a land far, far away","Over the hill","In Paris","Home is where the heart is at"};
+    String [] genAnswers = {"Maybe", "Time will tell", "My sources say No", "My sources say Yes", "There is a chance"};
+            
+    
+    public Magic8Ball (String askQuestion)  
+    {
+        this.askQuestion = askQuestion;    
+        if (askQuestion.toLowerCase().startsWith("why"))
+            return whyAnswers [randInt -1];
+        else if (askQuestion.toLowerCase().startsWith("who"))
+            return whoAnswers [randInt -1];
+        else if (askQuestion.toLowerCase().startsWith("what"))
+            return whatAswers [randInt -1];
+        else if (askQuestion.toLowerCase().startsWith("when"))
+            return whenAnswers [randInt -1];
+        else if (askQuestion.toLowerCase().startsWith("How"))
+            return howAnswers [randInt -1];
+        else if (askQuestion.toLowerCase().startsWith("where"))
+            return whereAnswers [randInt -1];
+        else
+            return genAnswers [randInt -1];
+        
+    }
+       
+    
+          
+}
